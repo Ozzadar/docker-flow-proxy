@@ -16,7 +16,7 @@ services:
     network_mode: host
     environment:
       - 'CONSUL_LOCAL_CONFIG={"skip_leave_on_interrupt": true}'
-    command: agent -server -bind=$DOCKER_IP -bootstrap-expect=1 -client=$DOCKER_IP
+    command: agent -server -bind=$CONSUL_INTERNAL -bootstrap-expect=1 -client=$CONSUL_INTERNAL
 
   consul-agent:
     container_name: consul
